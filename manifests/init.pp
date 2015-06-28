@@ -21,7 +21,7 @@ class wget (
   }
 
   if $::osfamily == 'Darwin' {
-    if ! define(Package['wget']) {
+    if ! defined(Package['wget']) {
       include homebrew
       package { 'wget': ensure => $version }
     }
