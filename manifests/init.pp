@@ -19,4 +19,12 @@ class wget (
       package { 'ftp/wget': ensure => $version }
     }
   }
+
+  if $::osfamily == 'Darwin' {
+    if ! define(Package['wget']) {
+      include homebrew
+      package { 'wget': ensure => $version }
+    }
+  }
+
 }
