@@ -1,9 +1,4 @@
-[![Build Status](https://travis-ci.org/maestrodev/puppet-wget.svg?branch=master)](https://travis-ci.org/maestrodev/puppet-wget)
-[![Puppet Forge](https://img.shields.io/puppetforge/v/maestrodev/wget.svg)](https://forge.puppetlabs.com/maestrodev/wget)
-[![Puppet Forge](https://img.shields.io/puppetforge/f/maestrodev/wget.svg)](https://forge.puppetlabs.com/maestrodev/wget)
-[![Puppet Forge](https://img.shields.io/puppetforge/e/maestrodev/wget.svg)](https://forge.puppetlabs.com/maestrodev/wget)
-
-
+[![Build Status](https://travis-ci.org/scottylogan/puppet-wget.svg?branch=master)](https://travis-ci.org/scottylogan/puppet-wget)
 
 A Puppet module to download files with wget, supporting authentication.
 
