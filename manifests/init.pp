@@ -6,25 +6,27 @@
 ################################################################################
 class wget (
   $version = present,
+  $manage_package = true,
 ) {
 
-  if $::kernel == 'Linux' {
-    if ! defined(Package['wget']) {
-      package { 'wget': ensure => $version }
+  if $manage_package {
+    if $::kernel == 'Linux' {
+      if ! defined(Package['wget']) {
+        package { 'wget': ensure => $version }
+      }
+    }
+
+    if $::kernel == 'FreeBSD' {
+      if ! defined(Package['ftp/wget']) {
+        package { 'ftp/wget': ensure => $version }
+      }
+    }
+
+    if $::osfamily == 'Darwin' {
+      if ! defined(Package['wget']) {
+        include homebrew
+        package { 'wget': ensure => $version }
+      }
     }
   }
-
-  if $::kernel == 'FreeBSD' {
-    if ! defined(Package['ftp/wget']) {
-      package { 'ftp/wget': ensure => $version }
-    }
-  }
-
-  if $::osfamily == 'Darwin' {
-    if ! defined(Package['wget']) {
-      include homebrew
-      package { 'wget': ensure => $version }
-    }
-  }
-
 }
